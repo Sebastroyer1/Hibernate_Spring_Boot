@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name = "hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect <!--Indica a Hibernate cómo generar SQL para una base de datos específica -->
+        </property>
+        <property name = "hibernate.connection.driver_class"><!--Clase de controlador JDBC utilizada para MySQL -->
+            com.mysql.cj.jdbc.Driver
+        </property>
+        <property name = "hibernate.connection.url">   <!--URL JDBC para conectarse a la base de datos MySQL bookstore -->
+            jdbc:mysql://localhost:3306/bookstore-hibernate
+        </property>
+        <property name = "hibernate.connection.username"><!--ICredenciales para conectarse a la base de datos -->
+            root
+        </property>
+        <!-- Enter your correct password here -->
+        <property name = "hibernate.connection.password"><!--Credenciales para conectarse a la base de datos -->
+            trainibit
+        </property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name = "show_sql">      <!--habilita el registro de consultas SQL en la consola -->
+            true
+        </property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name = "current_session_context_class">thread</property><!--garantiza que las sesiones se gestionen por subprocesos -->
+
+        <!-- Enable Hibernate to update/create table in mysql -->
+        <property name="hibernate.hbm2ddl.auto">update</property><!-- actualiza automáticamente el esquema de la base de datos -->
+
+    </session-factory>
+</hibernate-configuration>
